@@ -1,0 +1,2 @@
+include chat2pdf/data/*.zip
+include chat2pdf/data/*.txt

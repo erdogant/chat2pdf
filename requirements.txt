@@ -1,0 +1,9 @@
+streamlit
+PyPDF2
+langchain
+langchain-community
+spacy
+faiss-cpu
+langchain_ollama
+
+# python -m spacy download en_core_web_sm
