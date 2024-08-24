@@ -71,57 +71,57 @@ from chat2pdf import chat2pdf
 # Import
 from chat2pdf import chat2pdf
 # Initialize
-model = chat2pdf(model='Phi3')
+client = chat2pdf(model='Phi3')
 
 # Check prompt
-print(model.prompt)
+print(client.prompt)
 
-model.pdf_read([r'C:\my_personal_pdf.pdf'])
-print(model.context)
+client.pdf_read([r'C:\my_personal_pdf.pdf'])
+print(client.context)
 
 question = "Create a summary with at most 100 words"
-model.question(question)
+client.question(question)
 
-# print(model.response)
-model.question('What was my first question?')
+# print(client.response)
+client.question('What was my first question?')
 
 ```
 
 
-#### Example by adding directly Context:
+#### Example by adding alternatively context:
 ```python
 
 # Import
 from chat2pdf import chat2pdf
 # Initialize
-model = chat2pdf()
+client = chat2pdf()
 
 # print the prompt text
-print(model.prompt)
+print(client.prompt)
 
 # Change prompt:
-# model.prompt = "Use Dutch as language."
+# client.prompt = "Use Dutch as language."
 
-model.context = """
+client.context = """
 The Eiffel Tower is a wrought iron lattice tower on the Champ de Mars in Paris, France.
 It is named after the engineer Gustave Eiffel, whose company designed and built the tower.
 The tower is 324 meters (1,063 ft) tall, about the same height as an 81-story building, and the tallest structure in Paris.
 The number of visitors on yearly basis is 10.000.
 """
-print(model.context)
+print(client.context)
 
 # question = "How many people visit the Eiffel Tower?"
 # question = "How width is the Eiffel Tower?"
 question = "How tall is the Eiffel Tower?"
 
 # Template
-print(model.template)
+print(client.template)
 
 # Now ask the question
-model.question(question)
+client.question(question)
 
 # Reponse
-# print(model.response)
+# print(client.response)
 
 ```
 
