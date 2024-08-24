@@ -11,8 +11,6 @@
 [![Issues](https://img.shields.io/github/issues/erdogant/chat2pdf.svg)](https://github.com/erdogant/chat2pdf/issues)
 [![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![DOI](https://zenodo.org/badge/228166657.svg)](https://zenodo.org/badge/latestdoi/228166657)
-[![Medium](https://img.shields.io/badge/Medium-Blog-green)](https://towardsdatascience.com/what-are-chat2pdf-loadings-and-biplots-9a7897f2e559)
-[![Colab](https://colab.research.google.com/assets/colab-badge.svg?logo=github%20sponsors)](https://erdogant.github.io/chat2pdf/pages/html/Documentation.html#colab-notebook)
 ![GitHub Repo stars](https://img.shields.io/github/stars/erdogant/chat2pdf)
 ![GitHub repo size](https://img.shields.io/github/repo-size/erdogant/chat2pdf)
 [![Donate](https://img.shields.io/badge/Support%20this%20project-grey.svg?logo=github%20sponsors)](https://erdogant.github.io/chat2pdf/pages/html/Documentation.html#)
@@ -25,13 +23,6 @@
 **Star this repo if you like it! ⭐️**
 #
 
-
-### Contents
-- [Installation](#-installation)
-- [Contribute](#-contribute)
-- [Citation](#-citation)
-- [Maintainers](#-maintainers)
-- [License](#-copyright)
 
 ### Installation
 * Install chat2pdf from PyPI (recommended). chat2pdf is compatible with Python 3.6+ and runs on Linux, MacOS X and Windows. 
