@@ -3,12 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+bnlearn/.pylint.d/
+bnlearn/data/
+julia/
+
+*.pkl
+.pypirc
+
 # C extensions
 *.so
-
-# ignore dirs
-libraries/
-.pypirc
 
 # Distribution / packaging
 .pylint.*
@@ -133,3 +136,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .pylint.*
+
+# IntelliJ
+.idea/
