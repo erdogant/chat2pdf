@@ -9,26 +9,22 @@ Licence     : See licences
 """
 
 # import subprocess
-from tqdm import tqdm
 import streamlit as st
 from PyPDF2 import PdfReader
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings.spacy_embeddings import SpacyEmbeddings
 from langchain_community.vectorstores import FAISS
-# from langchain.tools.retriever import create_retriever_tool
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_ollama import OllamaLLM
+
 import os
 import re
 import psutil
-import logging
-
 import time
 import itertools
 import sys
-
-from langchain_ollama import OllamaLLM
-from langchain_core.prompts import ChatPromptTemplate
-
+import logging
 
 logger = logging.getLogger('')
 [logger.removeHandler(handler) for handler in logger.handlers[:]]
@@ -89,10 +85,10 @@ class chat2pdf():
         self.model = OllamaLLM(model=model)
 
         # Create spacy embedding
-        self.embeddings = self.create_spacy_embedding(method)
+        # self.embeddings = self.create_spacy_embedding(method)
         # Set chunk sizes
-        self.chunk_size = 1000
-        self.chunk_overlap = 200
+        # self.chunk_size = 1000
+        # self.chunk_overlap = 200
 
         if "KMP_DUPLICATE_LIB_OK" not in os.environ:
             # If it doesn't exist, set it to "TRUE"
@@ -218,9 +214,9 @@ class chat2pdf():
 
         self.context = text
         # Create chunks
-        context_chunks = create_text_chunks(text, chunk_size=self.chunk_size, chunk_overlap=self.chunk_overlap)
+        # context_chunks = create_text_chunks(text, chunk_size=self.chunk_size, chunk_overlap=self.chunk_overlap)
         # Store vector
-        self.create_vectors(context_chunks)
+        # self.create_vectors(context_chunks)
 
 
 # %%
