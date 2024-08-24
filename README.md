@@ -132,6 +132,10 @@ streamlit run chat2pdf.py
 
 ```
 
+<p align="center">
+  <img src="https://github.com/erdogant/chat2pdf/blob/master/docs/figs/screenshot_gui.png" width="600" />
+</p>
+
 
 #### References
 * https://github.com/erdogant/chat2pdf
