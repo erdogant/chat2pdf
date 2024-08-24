@@ -125,6 +125,13 @@ model.question(question)
 
 ```
 
+#### Example by adding directly Context:
+```Bash
+
+streamlit run chat2pdf.py
+
+```
+
 
 #### References
 * https://github.com/erdogant/chat2pdf
