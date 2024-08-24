@@ -19,29 +19,11 @@
 <!---[![BuyMeCoffee](https://img.shields.io/badge/buymea-coffee-yellow.svg)](https://www.buymeacoffee.com/erdogant)-->
 <!---[![Coffee](https://img.shields.io/badge/coffee-black-grey.svg)](https://erdogant.github.io/donate/?currency=USD&amount=5)-->
 
-
-
-
-
-<!---[![BuyMeCoffee](https://img.shields.io/badge/buymea-coffee-yellow.svg)](https://www.buymeacoffee.com/erdogant)-->
-<!---[![Coffee](https://img.shields.io/badge/coffee-black-grey.svg)](https://erdogant.github.io/donate/?currency=USD&amount=5)-->
-
 * ``chat2pdf`` is Python package
 
 # 
 **Star this repo if you like it! ⭐️**
 #
-
-
-## Blog/Documentation
-
-* [**chat2pdf documentation pages (Sphinx)**](https://erdogant.github.io/chat2pdf/)
-* [**Notebook with examples**](https://colab.research.google.com/github/erdogant/chat2pdf/blob/master/notebooks/chat2pdf.ipynb)
-* [**Read more details and usage about chat2pdf in this blog!**](https://towardsdatascience.com/chat2pdf)
-
-* <a href="https://erdogant.github.io/chat2pdf/"> <img src="https://img.shields.io/badge/Sphinx-Docs-Green" alt="Open documentation pages"/> </a> chat2pdf documentation pages 
-* <a href="https://colab.research.google.com/github/erdogant/chat2pdf/blob/master/notebooks/chat2pdf.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open example In Colab"/> </a> Notebook example 
-* <a href="https://towardsdatascience.com/a-step-by-step-guide-for-clustering-images-4b45f9906128"> <img src="https://img.shields.io/badge/Medium-Blog-blue" alt="Open Blog"/> </a> Blog: A step-by-step guide for clustering images 
 
 
 ### Contents
@@ -53,10 +35,10 @@
 
 ### Installation
 * Install chat2pdf from PyPI (recommended). chat2pdf is compatible with Python 3.6+ and runs on Linux, MacOS X and Windows. 
-* A new environment can be created as following:
+* A new environment can be created as follows:
 
 ```bash
-conda create -n env_chat2pdf python=3.8
+conda create -n env_chat2pdf python=3.12
 conda activate env_chat2pdf
 ```
 
@@ -75,24 +57,73 @@ pip install git+https://github.com/erdogant/chat2pdf
 # By cloning
 git clone https://github.com/erdogant/chat2pdf.git
 cd chat2pdf
-pip install -U .
+pip install -U -e .
 ```  
 
 #### Import chat2pdf package
 ```python
-import chat2pdf as chat2pdf
+from chat2pdf import chat2pdf
 ```
 
-#### Example:
+#### Example by using PDF files
 ```python
-df = pd.read_csv('https://github.com/erdogant/hnet/blob/master/chat2pdf/data/example_data.csv')
-model = chat2pdf.fit(df)
-G = chat2pdf.plot(model)
+
+# Import
+from chat2pdf import chat2pdf
+# Initialize
+model = chat2pdf(model='Phi3')
+
+# Check prompt
+print(model.prompt)
+
+model.pdf_read([r'C:\my_personal_pdf.pdf'])
+print(model.context)
+
+question = "Create a summary with at most 100 words"
+model.question(question)
+
+# print(model.response)
+model.question('What was my first question?')
+
 ```
-<p align="center">
-  <img src="https://github.com/erdogant/chat2pdf/blob/master/docs/figs/fig1.png" width="600" />
-  
-</p>
+
+
+#### Example by adding directly Context:
+```python
+
+# Import
+from chat2pdf import chat2pdf
+# Initialize
+model = chat2pdf()
+
+# print the prompt text
+print(model.prompt)
+
+# Change prompt:
+# model.prompt = "Use Dutch as language."
+
+model.context = """
+The Eiffel Tower is a wrought iron lattice tower on the Champ de Mars in Paris, France.
+It is named after the engineer Gustave Eiffel, whose company designed and built the tower.
+The tower is 324 meters (1,063 ft) tall, about the same height as an 81-story building, and the tallest structure in Paris.
+The number of visitors on yearly basis is 10.000.
+"""
+print(model.context)
+
+# question = "How many people visit the Eiffel Tower?"
+# question = "How width is the Eiffel Tower?"
+question = "How tall is the Eiffel Tower?"
+
+# Template
+print(model.template)
+
+# Now ask the question
+model.question(question)
+
+# Reponse
+# print(model.response)
+
+```
 
 
 #### References
